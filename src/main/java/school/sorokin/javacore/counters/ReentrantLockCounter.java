@@ -23,6 +23,11 @@ public class ReentrantLockCounter implements SiteVisitCounter {
 
     @Override
     public int getVisitCounter() {
-        return counter;
+        lock.lock();
+        try {
+            return counter;
+        } finally {
+            lock.unlock();
+        }
     }
 }

@@ -3,7 +3,7 @@ package school.sorokin.javacore.counters;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class AtomicIntegerCounter implements SiteVisitCounter {
-    private AtomicInteger counter;
+    private final AtomicInteger counter;
 
     public AtomicIntegerCounter() {
         this.counter = new AtomicInteger(0);
